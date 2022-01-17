@@ -1,0 +1,20 @@
+int numDuplicates(vector<string> name, vector<int> price, vector<int> weight) {
+	int count=0;
+	string product="";
+	unordered_map<string,int>freq;
+	for(int i=0;i<name.size();i++)
+	{
+    	product=name[i]+" "+to_string(price[i])+" "+to_string(weight[i]);
+    	if(freq[product])
+    	{
+        	count++;
+    	}
+    	else
+    	{
+        	freq[product]++;
+    	}
+   	 
+	}
+	return count;
+
+}
